@@ -4,7 +4,8 @@
     let inputs = document.querySelectorAll('.controls input');
 
     function handleUpdate() {
-        console.log(this.value);
+        let suffix = this.dataset.sizing || '';
+        document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
     };
 
     inputs.forEach((input) => input.addEventListener('change', handleUpdate));
